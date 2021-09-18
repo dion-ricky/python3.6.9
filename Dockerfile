@@ -19,7 +19,9 @@ RUN ./configure --enable-optimizations --prefix=$HOME/python3.6.9
 RUN make
 RUN make install
 ENV PATH=/root/python3.6.9/bin:$PATH
-RUN rm /Python-3.6.9.tgz
-RUN rm -rf /Python-3.6.9
+RUN rm /Python-3.6.9.tgz \
+  && rm -rf /Python-3.6.9
+RUN ln -s /root/python3.6.9/bin/python3 /root/python3.6.9/bin/python \
+  && ln -s /root/python3.6.9/bin/pip3 /root/python3.6.9/bin/pip
 WORKDIR /root
-ENTRYPOINT tail -f /dev/null
+ENTRYPOINT python3
