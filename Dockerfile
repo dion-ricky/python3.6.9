@@ -7,7 +7,7 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
         build-essential libopenmpi-dev \
         libgdm-dev libz-dev \
-        tk-dev libbluetooth-dev \
+        libbluetooth-dev \
 	tk-dev uuid-dev \
   && apt-get autoremove -yqq --purge \
   && apt-get clean \
