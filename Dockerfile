@@ -1,4 +1,4 @@
-FROM buildpack-deps:bullseye
+FROM buildpack-deps:bionic
 
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
